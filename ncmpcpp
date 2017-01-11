@@ -1,0 +1,20 @@
+
+mpd_host = localhost
+mpd_port = 6600
+mpd_music_dir = ~/music
+
+visualizer_fifo_path = "/tmp/mpd.fifo"
+visualizer_output_name = "my_fifo"
+visualizer_sync_interval = "30" 
+visualizer_in_stereo = "yes"
+visualizer_type = "spectrum"
+visualizer_look = "+|"
+
+song_columns_list_format = (20)[]{a} (50)[white]{t|f:Title} (20)[cyan]{b} (7f)[magenta]{l}
+
+playlist_display_mode = columns
+user_interface = alternative
+autocenter_mode = yes
+header_visibility = no
+titles_visibility = no
+alternative_ui_separator_color = white
