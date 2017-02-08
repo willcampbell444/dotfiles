@@ -21,7 +21,7 @@
 
 URxvt.font: xft:Bitstream Vera Sans Mono:size=10, xft:DejaVu Sans Mono for Powerline:size=10
 URxvt.scrollBar: false
-URxvt.savelines: 32767
+URxvt.savelines: 10000
 URxvt.scrollTtyKeypress: true
 URxvt.scrollTtyOutput: false
 URxvt.scrollWithBuffer: false

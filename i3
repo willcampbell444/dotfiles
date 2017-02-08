@@ -213,5 +213,4 @@ client.focused_inactive $unfocused $unfocused #bwht $unfocused
 # }
 
 exec xrdb /home/will/.Xresources
-exec feh --bg-fill /home/will/Downloads/wallpapers/trees.jpg
 exec compton -c --shadow-exclude '_NET_WM_OPAGUE_REGION@:c' &
