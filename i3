@@ -5,28 +5,27 @@
 # this file and re-run i3-config-wizard(1).
 #
 
+set $bg    #29343E
+set $fg    #D2DCD0
+set $blk   #384755
+set $bblk  #29343E
+set $red   #67645B
+set $grn   #6C826C
+set $ylw   #799994
+set $blu   #7A9977
+set $mag   #938FAB
+set $cyn   #6C6C82
+set $wht   #D2DCD0
+set $bred  #5E5B53
+set $bgrn  #476347
+set $bylw  #6E8C87
+set $bblu  #647E62
+set $bmag  #7C7799
+set $bcyn  #474768
+set $bwht  #BFC8BE
 
-set $bg    #2b303b
-set $fg    #c0c5ce
-set $blk   #2b303b
-set $bblk  #10182A
-set $red   #AB787E
-set $grn   #729669
-set $ylw   #B2997D
-set $blu   #516671
-set $mag   #B2897D
-set $cyn   #628C65
-set $wht   #c0c5ce
-set $bred  #8D575D
-set $bgrn  #567C4C
-set $bylw  #93795B
-set $bblu  #3B525D
-set $bmag  #93675B
-set $bcyn  #47744A
-set $bwht  #cdc5b7
-
-set $focused #B2997D
-set $unfocused #93795B
+set $focused #384755
+set $unfocused #29343E
 
 # i3 config file (v4)
 #
@@ -55,11 +54,12 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
-new_window pixel 3
-hide_edge_borders both
+new_window pixel 2
+#hide_edge_borders both
 
-gaps inner 20
-gaps outer 30
+gaps inner 8
+#gaps top 55
+gaps outer 12
 
 # kill focused window
 bindsym $mod+Shift+c kill
@@ -72,10 +72,16 @@ bindsym $mod+r exec rofi -show run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+a focus left
-bindsym $mod+s focus down
-bindsym $mod+w focus up
-bindsym $mod+d focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# change focus
+bindsym $mod+a move workspace to output left
+# bindsym $mod+s move workspace to output right
+# bindsym $mod+w focus up
+# bindsym $mod+d focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -84,10 +90,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+a move left
-bindsym $mod+Shift+s move down
-bindsym $mod+Shift+w move up
-bindsym $mod+Shift+d move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -96,7 +102,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+Shift+v split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -148,6 +154,8 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
+bindsym $mod+Shift+b exec $HOME/dotfiles/polybar/exit.sh
+bindsym $mod+b exec $HOME/dotfiles/polybar/launch.sh
 # reload the configuration file
 bindsym $mod+Shift+r reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -163,6 +171,11 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym j resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+
         bindsym a resize shrink width 10 px or 10 ppt
         bindsym w resize grow height 10 px or 10 ppt
         bindsym s resize shrink height 10 px or 10 ppt
@@ -188,6 +201,7 @@ bindsym XF86AudioMute exec volume mute
 bindsym XF86MonBrightnessUp exec sudo brightness up
 bindsym XF86MonBrightnessDown exec sudo brightness down
 
+bindsym Shift+XF86AudioPause exec mpc stop
 bindsym XF86AudioNext exec mpc next
 bindsym XF86AudioPrev exec mpc prev
 bindsym XF86AudioPlay exec mpc toggle
@@ -214,3 +228,4 @@ client.focused_inactive $unfocused $unfocused #bwht $unfocused
 
 exec xrdb /home/will/.Xresources
 exec compton -c --shadow-exclude '_NET_WM_OPAGUE_REGION@:c' &
+exec $HOME/dotfiles/polybar/launch.sh

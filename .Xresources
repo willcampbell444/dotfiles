@@ -1,23 +1,23 @@
 ! colors
 
-#define bg    #2b303b
-#define fg    #c0c5ce
-#define blk   #2b303b
-#define bblk  #10182A
-#define red   #AB787E
-#define grn   #729669
-#define ylw   #B2997D
-#define blu   #516671
-#define mag   #B2897D
-#define cyn   #628C65
-#define wht   #c0c5ce
-#define bred  #8D575D
-#define bgrn  #567C4C
-#define bylw  #93795B
-#define bblu  #516671
-#define bmag  #93675B
-#define bcyn  #47744A
-#define bwht  #cdc5b7
+#define bg    #29343E
+#define fg    #D2DCD0
+#define blk   #384755
+#define bblk  #29343E
+#define red   #67645B
+#define grn   #6C826C
+#define ylw   #799994
+#define blu   #7A9977
+#define mag   #938FAB
+#define cyn   #6C6C82
+#define wht   #D2DCD0
+#define bred  #5E5B53
+#define bgrn  #476347
+#define bylw  #6E8C87
+#define bblu  #647E62
+#define bmag  #476347
+#define bcyn  #474768
+#define bwht  #BFC8BE
 
 URxvt.font: xft:Bitstream Vera Sans Mono:size=10, xft:DejaVu Sans Mono for Powerline:size=10
 URxvt.scrollBar: false
